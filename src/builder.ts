@@ -10,7 +10,7 @@ import {ExecOptions} from '@actions/exec/lib/interfaces'
 let tempDirectory = process.env['RUNNER_TEMP'] || ''
 const workDir = process.env['GITHUB_WORKSPACE']
 //const dependenciesDir =  `${workDir}/tmp`
-const buildDir = `${workDir}/openjdk-build`
+const buildDir = `${workDir}/temurin-build-dcevm`
 const IS_WINDOWS = process.platform === 'win32'
 const targetOs = IS_WINDOWS ? 'windows' : process.platform === 'darwin' ? 'mac' : 'linux'
 
