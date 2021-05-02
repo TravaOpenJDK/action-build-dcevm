@@ -1,0 +1,26 @@
+name: 'build-dcevm'
+description: 'Build different version of dcevm from TravaOpenJDK community'
+author: 'Sophia Guo'
+inputs:
+  javaToBuild:
+    description: 'openjdk version'
+    default: 'jdk11u'     ## jdk8u cannot be built on macOS 10.14 or 10.13
+  impl:
+    default: 'dcevm'
+  dcevm_branch:
+    description: 'dcevm branch'
+    required: true
+  dcevm_tag:
+    description: 'dcevm tag'
+    required: true
+  usePRRef:
+    description: 'A boolean value ("true" or "false") on whether using default openjdk-build repo or PR repo.'
+    required: false
+outputs:
+  BuildJDKDir:
+    description: 'build jdk images directory'
+  JdkPackageFileName:
+    description: 'output package filename in workspace/artifacts directory'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

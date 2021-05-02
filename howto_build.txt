@@ -1,0 +1,3 @@
+npm install
+tsc
+PATH=$(npm bin):$PATH ncc build lib/build-jdk.js 
