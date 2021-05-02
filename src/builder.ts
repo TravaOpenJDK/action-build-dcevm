@@ -67,7 +67,7 @@ export async function buildJDK(
   // workround of issue https://github.com/sophia-guo/build-jdk/issues/6
   core.exportVariable('ARCHITECTURE', 'x64')
   let configureArgs
-  const fileName = `Open${javaToBuild.toUpperCase()}-jdk_x64_${targetOs}_${impl}_${time}`
+  const fileName = `Open${javaToBuild}-${impl}-${targetOs}-x64`
   let fullFileName = `${fileName}.tar.gz`
   if (`${targetOs}` === 'mac') {
     configureArgs = "--disable-warnings-as-errors --with-extra-cxxflags='-stdlib=libc++ -mmacosx-version-min=10.8'"
